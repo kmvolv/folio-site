@@ -41,7 +41,7 @@ export default function Projects() {
 				<Project
 					name="Vigrah"
 					link="https://github.com/yash-agrawal20/SIH2022-Finals-Vigrah"
-					description="Smart India Hackathon Grand Finale Project"
+					description="Smart India Hackathon Grand Finale Project + Research Paper"
 					language="MobileNet"
 					languageColor="#d4af37"
 				/>

@@ -121,7 +121,7 @@ export default function Contact() {
                 You can also reach out via <ContactPageLink to={`mailto:${contact.email}`} text="email" />
                 <br />
                 <br />
-                (<Act>PSSST!</Act> Have you tried clicking the shapes or the <Act>colored text</Act> on the header?)
+                (<Act>PSSST!</Act> Have you tried clicking the sun/moon or the <Act>colored text</Act> on the header?)
                 <br /> <br />
                 Source for this portfolio is{" "}
                 <ContactPageLink to={portfolioSource} text="here" />

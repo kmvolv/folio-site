@@ -1,30 +1,30 @@
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
-metadata:
-  name: fe-route
-  namespace: portfolio
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: (Host(`uditkaro.de`) || Host(`udit.krd`) || Host(`xn--dckf2goh.com`)) && PathPrefix(`/`)
-      kind: Rule
-      services:
-        - name: frontend
-          port: 80
-      middlewares:
-        - name: redirect-to-index
----
-apiVersion: traefik.io/v1alpha1
-kind: Middleware
-metadata:
-  name: redirect-to-index
-  namespace: portfolio
-spec:
-  errors:
-    status:
-      - "404"
-    service:
-      name: frontend
-      port: 80
-    query: "/"
+# apiVersion: traefik.io/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: fe-route
+#   namespace: portfolio
+# spec:
+#   entryPoints:
+#     - web
+#   routes:
+#     - match: (Host(`rohail-folio.de`) || Host(`rohail-folio.com`) || Host(`xn--dckf2goh.com`)) && PathPrefix(`/`)
+#       kind: Rule
+#       services:
+#         - name: frontend
+#           port: 80
+#       middlewares:
+#         - name: redirect-to-index
+# ---
+# apiVersion: traefik.io/v1alpha1
+# kind: Middleware
+# metadata:
+#   name: redirect-to-index
+#   namespace: portfolio
+# spec:
+#   errors:
+#     status:
+#       - "404"
+#     service:
+#       name: frontend
+#       port: 80
+#     query: "/"

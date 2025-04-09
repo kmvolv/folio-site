@@ -10,7 +10,8 @@ import { animationContext } from "@/contexts/animation-context";
 import { useThemeStore } from "@/stores/theme-store";
 import { LayoutIds } from "@/utils/constants";
 import { fade, objectIf } from "@/utils/utils";
-import Shapes from "assets/shapes.svg?react";
+import ShapeSun from "assets/shapes.svg?react";
+import ShapeMoon from "assets/moon.svg?react";
 
 export default function Home() {
     const { theme, toggleTheme, setRandomAccent } = useThemeStore();
@@ -21,6 +22,16 @@ export default function Home() {
     const [isInitialLoadComplete, setIsInitialLoadComplete] = useState(false);
     const [showHint, setShowHint] = useState(false);
     const scrollEnabledTimeRef = useRef(0); // Reference to track when scroll should be enabled
+
+    // Add state to track which icon should be displayed - initialize based on theme
+    const [showSun, setShowSun] = useState(theme.type === "light");
+    // Add state to track if we've clicked yet (to control animations)
+    const [hasClicked, setHasClicked] = useState(false);
+
+    // Update showSun state when theme changes externally
+    useEffect(() => {
+        setShowSun(theme.type === "light");
+    }, [theme.type]);
 
     const initialDelay = 0.4;
 
@@ -114,6 +125,13 @@ export default function Home() {
         damping: 30
     };
 
+    // Handle icon toggle and theme change
+    const handleIconClick = () => {
+        setShowSun(!showSun); // Toggle the icon
+        toggleTheme(); // Toggle the theme
+        setHasClicked(true); // Mark that the user has clicked
+    };
+
     return (
         <div className={cx("fill", "flex", "flex-center-children")}>
             <div className="flex-col">
@@ -134,11 +152,94 @@ export default function Home() {
                     <motion.div
                         layout="position"
                         layoutId="shapes"
-                        style={{ cursor: "pointer" }}
+                        style={{ 
+                            cursor: "pointer",
+                            position: "relative",
+                            width: "min(18vw, 84px)",
+                            height: "min(18vw, 84px)",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}
                         {...fade(timings["shapes"], disableAnimations)}
-                        onClick={toggleTheme}
+                        onClick={handleIconClick}
                     >
-                        <Shapes fill={theme.accent} className={styles.shapes} />
+                        <AnimatePresence mode="sync">
+                            {showSun && (
+                                <motion.div
+                                    key="sun"
+                                    initial={hasClicked ? { 
+                                        opacity: 0,
+                                        rotate: -180,
+                                        scale: 0.8
+                                    } : { opacity: 1 }} // Only animate if we've clicked before
+                                    animate={{ 
+                                        opacity: 1,
+                                        rotate: 0,
+                                        scale: 1,
+                                        transition: { 
+                                            duration: 0.6,
+                                            ease: "easeInOut"
+                                        }
+                                    }}
+                                    exit={hasClicked ? { 
+                                        opacity: 0,
+                                        rotate: 180,
+                                        scale: 0.8,
+                                        transition: { 
+                                            duration: 0.6,
+                                            ease: "easeInOut"
+                                        }
+                                    } : { opacity: 0 }} // Only animate if we've clicked before
+                                    style={{
+                                        position: "absolute"
+                                    }}
+                                >
+                                    <ShapeSun 
+                                        fill={theme.accent} 
+                                        stroke={theme.accent} 
+                                        className={styles.shapes} 
+                                    />
+                                </motion.div>
+                            )}
+                            {!showSun && (
+                                <motion.div
+                                    key="moon"
+                                    initial={hasClicked ? { 
+                                        opacity: 0,
+                                        rotate: -180,
+                                        scale: 0.8
+                                    } : { opacity: 1 }} // Only animate if we've clicked before
+                                    animate={{ 
+                                        opacity: 1,
+                                        rotate: 0,
+                                        scale: 1,
+                                        transition: { 
+                                            duration: 0.6,
+                                            ease: "easeInOut"
+                                        }
+                                    }}
+                                    exit={hasClicked ? { 
+                                        opacity: 0,
+                                        rotate: 180,
+                                        scale: 0.8,
+                                        transition: { 
+                                            duration: 0.6,
+                                            ease: "easeInOut"
+                                        }
+                                    } : { opacity: 0 }} // Only animate if we've clicked before
+                                    style={{
+                                        position: "absolute"
+                                    }}
+                                >
+                                    {/* Apply white stroke directly */}
+                                    <ShapeMoon 
+                                        fill={theme.accent} 
+                                        className={styles.moonShape} 
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </motion.div>
 
                     <Spacer vertical={6} />
@@ -229,6 +330,12 @@ const styles = {
     shapes: css`
         width: min(18vw, 84px);
         height: auto;
+    `,
+    moonShape: css`
+        width: min(18vw, 84px);
+        height: auto;
+        stroke: white;
+        stroke-width: 2px;
     `,
     helperText: css`
         color: #fbfbfb;
