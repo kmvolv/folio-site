@@ -9,5 +9,5 @@ Updated scroll navigation to apply for every page, in either direction
 
 - **April 9, 2025** : <br>
 'About Me' content updated <br>
-Theme-changing icons updated <br>
+Theme-changing icons updated with a sweet rotating animation <br>
 Website icon changed to a tie 
