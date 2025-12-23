@@ -165,23 +165,24 @@ export default function About() {
     };
 
     return (
+        /* Use {yearsFromBirthday()} to get age*/
         <Scaffold headerText={["about", "me"]} buttonLink="/projects">
             <div className={styles.container}>
                 <p className={styles.text} style={{ color: theme.text }}>
-                    I'm a {yearsFromBirthday()} year old graduate student at <Act>Iowa State University</Act>. I'm currently pursuing a master's degree in <Act>Artificial Intellgence</Act>
-                    <br /> My fascination with AI began before I began my undergrad journey, when I stumbled upon a <Act>Deep Learning</Act> course on Coursera, and I was instantly hooked.
+                    I'm a Master's graduate from at <Act>Iowa State University</Act>, where I majored in <Act>Artificial Intellgence</Act>
+                    <br /> I've been upskilling myself in the field of AI for a minute now, a journey that started even before I began my undergraduate study at <Act>IIIT Kancheepuram</Act>
                     <br />
                     <br /> Over the years I've developed projects spanning across various domains, including but certainly not limited to <Act>Computer Vision</Act>, <Act>Natural Language Processing</Act>, and <Act>Reinforcement Learning</Act>.
                     <br /> I'd love to apply my skills to real-world problems and am always on the lookout for new opportunities!
                     <br />
-                    <br /> Currently, I'm working on a couple of projects:
-                    <br /> • <Act>Evaluation of Note-taking</Act> - A <Act>NLP-based Classifier</Act> to determine if the attendees of a lecture are able to capture all the important key points addressed.
-                    <br /> • <Act>AI Commentator</Act> - Commentary system powered by <Act>GenAI</Act> that generates realistic, engaging commentary in the style of the undisputed GOAT, Peter Drury.
+                    <br /> I'm currently working with <Act>BalanX Bio</Act>, a startup focused on leveraging AI for wellness and healthcare solutions, under the 'Emotion Response' team.
+                    <br /> I'm tasked with utilizing cutting-edge AI techniques to accurately gauge the emotional state of the user based on multimodal inputs.
+                    <br />  As a side project, I'm working on a competitive entry for the <Act><a href="https://smp-challenge.com/" target="_blank" rel="noopener noreferrer" style={{ color: theme.accent, textDecoration: 'underline' }}>SMP Challenge</a></Act> which is an extension of a project I worked on during my last semester. 
                     <br />
                     <br /> While I'm not busy racking my brain with projects and assigments, you'll probably find me:
                     <br /> • Unwinding at the <Act>Gym</Act>, working on my fitness and trying to demolish my PRs!
                     <br /> • Watching my favorite football team, <Act>Arsenal</Act> fumble yet another Premier League title.
-                    <br /> <span className={styles.hiddenbullet}>•</span> (It's been <Act>{time.years} years, {time.days} days, {time.hours} hours, {time.minutes} minutes, and {time.seconds} seconds</Act> since they last won the title!)
+                    <br /> <span className={styles.hiddenbullet}>•</span> (It's been <Act>{time.years} years, {time.days} days, {time.hours} hours, {time.minutes} minutes, and {time.seconds} seconds</Act> since the day they last won the title!)
                     <br /> • Getting my brain twisted (and sometimes my fingers too) with puzzles like the <Puzzle name="Mastermorphix" />, <Puzzle name="Megaminx" />, and <Puzzle name="Square-1" />
                     <br /> 
                 </p>

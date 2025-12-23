@@ -6,6 +6,9 @@ export const arsenalday = new Date("April 25, 2005");
 export const portfolioSource =
 	"https://github.com/kmvolv/folio-site";
 
+export const portfolioAttribution = 
+	"https://github.com/uditkarode/portfolio-rewrite"
+
 export const contact = {
 	linkedin: "https://www.linkedin.com/in/rohail-alam/",
 	email: "rohail03@iastate.edu",

@@ -3,7 +3,7 @@ import { useCallback, PropsWithChildren, useEffect, useRef, useState } from "rea
 import { Link, useNavigate } from "react-router-dom";
 import Scaffold from "@/components/Scaffold";
 import { useThemeStore } from "@/stores/theme-store";
-import { contact, portfolioSource } from "@/utils/constants";
+import { contact, portfolioAttribution, portfolioSource } from "@/utils/constants";
 import { lumenColor } from "@/utils/utils";
 
 export default function Contact() {
@@ -123,9 +123,17 @@ export default function Contact() {
                 <br />
                 (<Act>PSSST!</Act> Have you tried clicking the sun/moon or the <Act>colored text</Act> on the header?)
                 <br /> <br />
-                Source for this portfolio is{" "}
+                Source code for this portfolio is{" "}
                 <ContactPageLink to={portfolioSource} text="here" />
                 . <br />
+                <ContactPageLink to={portfolioAttribution} text="Attribution for the template design of this portfolio" />
+                .
+                {/* <br />
+                Don't like what you see?
+                <br />
+                It's a good thing I'm an AI Engineer and not a Frontend Developer then 😉 */}
+                <br />
+                <br />
                 Thanks for stopping by!
                 <br /><br />
             </p>
