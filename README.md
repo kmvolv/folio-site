@@ -2,7 +2,7 @@
 
 Portfolio Website built with **React 18**, **TypeScript**, and **Vite**
 
-Will possibly buy a domain in the future because boy, that is one ugly URL.
+Live on https://rohail-alam.vercel.app/ !
 
 ## Tech Stack
 
