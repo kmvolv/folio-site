@@ -166,15 +166,18 @@ const styles = {
     shapes: css`
         width: min(18vw, 82px);
         height: auto;
+        transition: fill 0.4s ease, stroke 0.4s ease;
     `,
     about: css`
         font-size: min(8vw, 34px);
         font-family: Manrope;
+        transition: color 0.4s ease;
     `,
     me: css`
         font-size: min(8vw, 34px);
         font-family: Manrope;
         font-weight: bold;
         cursor: pointer;
+        transition: color 0.4s ease;
     `,
 };

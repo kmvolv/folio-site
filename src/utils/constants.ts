@@ -1,7 +1,7 @@
 import { Theme } from "@/stores/theme-store";
 
 export const birthday = new Date("July 03, 2002");
-export const arsenalday = new Date("April 25, 2005");
+export const arsenalday = new Date("May 19, 2026");
 
 export const portfolioSource =
 	"https://github.com/kmvolv/folio-site";

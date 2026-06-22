@@ -13,6 +13,7 @@ export default function ColoredLine(props: MotionProps) {
 					width: "100%",
 					height: 2,
 					opacity: 0.4,
+					transition: "background-color 0.4s ease",
 				}}
 				{...props}
 			/>

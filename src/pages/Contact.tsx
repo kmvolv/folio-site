@@ -17,6 +17,7 @@ export default function Contact() {
     const linkStyle = {
         color: lumenColor(theme.accent, 32),
         opacity: 0.8,
+        transition: "color 0.4s ease",
     } satisfies CSSProperties;
     
     // Set up the initial timing for scroll events
@@ -94,6 +95,7 @@ export default function Contact() {
                     style={{
                         color: lumenColor(theme.accent, 25),
                         fontWeight: "500",
+                        transition: "color 0.4s ease",
                     }}
                 >
                     {" "}
@@ -111,7 +113,7 @@ export default function Contact() {
             rotatedButton
             largeButton
         >
-            <p style={{ color: theme.text }} className={styles.text}>
+            <p style={{ color: theme.text, transition: "color 0.4s ease" }} className={styles.text}>
                 Like what you see?
                 <br />
                 Then let's connect on {" "}
