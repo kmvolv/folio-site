@@ -36,6 +36,10 @@ const styles = {
 		height: 100%;
 		width: 100%;
 		cursor: pointer;
+		transition: fill 0.4s ease, stroke 0.4s ease;
+		& * {
+			transition: fill 0.4s ease, stroke 0.4s ease;
+		}
 	`,
 	buttonHolder: css`
 		width: min(11.2vw, 50px);

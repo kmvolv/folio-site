@@ -62,7 +62,7 @@ export default function Home() {
         // Show the hint message after a few seconds
         const hintTimeout = setTimeout(() => {
             setShowHint(true);
-        }, 3500);
+        }, 1000);
 
         return () => {
             clearTimeout(hintTimeout);
@@ -248,11 +248,12 @@ export default function Home() {
                     <LayoutGroup id="greeting-line">
                         <div 
                             className={styles.helperText} 
-                            style={{ 
+                            style={{
                                 color: theme.text,
                                 display: "flex",
                                 alignItems: "center",
-                                flexWrap: "nowrap"
+                                flexWrap: "nowrap",
+                                transition: "color 0.4s ease",
                             }}
                         >
                             {/* Current greeting with fade animation */}
@@ -284,7 +285,7 @@ export default function Home() {
                     {/* Name Text */}
                     <motion.p
                         {...fade(timings["text"], disableAnimations)}
-                        style={{ color: theme.accent }}
+                        style={{ color: theme.accent, transition: "color 0.4s ease" }}
                         className={styles.nameText}
                         layoutId={LayoutIds.Title2}
                         layout="position"
@@ -309,7 +310,7 @@ export default function Home() {
                             {showHint && (
                                 <motion.div 
                                     className={styles.hintText}
-                                    style={{ color: theme.text }}
+                                    style={{ color: theme.text, transition: "color 0.4s ease" }}
                                     initial={{ opacity: 0, y: 5 }}
                                     animate={{ opacity: 0.7, y: 5 }}
                                     exit={{ opacity: 0 }}

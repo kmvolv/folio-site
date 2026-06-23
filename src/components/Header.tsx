@@ -149,6 +149,21 @@ export default function Header(props: { text: [string, string] }) {
                 >
                     {props.text[1]}
                 </motion.p>
+
+                {/* Resume button pushed to the far right */}
+                <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.resumeLink}
+                    style={{
+                        marginLeft: "auto",
+                        ["--btn-accent" as any]: theme.accent,
+                        ["--btn-bg" as any]: theme.background,
+                    }}
+                >
+                    My Resume
+                </a>
             </div>
             <Spacer vertical={12} />
             <ColoredLine />
@@ -166,15 +181,40 @@ const styles = {
     shapes: css`
         width: min(18vw, 82px);
         height: auto;
+        transition: fill 0.4s ease, stroke 0.4s ease;
     `,
     about: css`
         font-size: min(8vw, 34px);
         font-family: Manrope;
+        transition: color 0.4s ease;
     `,
     me: css`
         font-size: min(8vw, 34px);
         font-family: Manrope;
         font-weight: bold;
         cursor: pointer;
+        transition: color 0.4s ease;
+    `,
+    resumeLink: css`
+        display: inline-block;
+        padding: 10px 28px;
+        border-radius: 100px;
+        border: 2px solid var(--btn-accent);
+        font-family: Manrope;
+        font-size: min(4.4vw, 17px);
+        font-weight: 600;
+        text-decoration: none;
+        white-space: nowrap;
+        flex-shrink: 0;
+        letter-spacing: 0.02em;
+        color: var(--btn-bg);
+        background-color: var(--btn-accent);
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+            background-color: transparent;
+            color: var(--btn-accent);
+            transform: scale(1.05);
+        }
     `,
 };

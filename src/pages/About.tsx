@@ -140,6 +140,7 @@ export default function About() {
                     style={{
                         color: lumenColor(theme.accent, 25),
                         fontWeight: "500",
+                        transition: "color 0.4s ease",
                     }}
                 >
                     {" "}
@@ -168,21 +169,21 @@ export default function About() {
         /* Use {yearsFromBirthday()} to get age*/
         <Scaffold headerText={["about", "me"]} buttonLink="/projects">
             <div className={styles.container}>
-                <p className={styles.text} style={{ color: theme.text }}>
-                    I'm a Master's graduate from at <Act>Iowa State University</Act>, where I majored in <Act>Artificial Intellgence</Act>
+                <p className={styles.text} style={{ color: theme.text, transition: "color 0.4s ease" }}>
+                    I'm a Master's graduate from <Act>Iowa State University</Act>, where I majored in <Act>Artificial Intelligence</Act>
                     <br /> I've been upskilling myself in the field of AI for a minute now, a journey that started even before I began my undergraduate study at <Act>IIIT Kancheepuram</Act>
                     <br />
-                    <br /> Over the years I've developed projects spanning across various domains, including but certainly not limited to <Act>Computer Vision</Act>, <Act>Natural Language Processing</Act>, and <Act>Reinforcement Learning</Act>.
+                    <br /> Over the years I've developed projects spanning across various domains, including but certainly not limited to <Act>Multimodal AI</Act>, <Act>Natural Language Processing</Act>, <Act>LLMs</Act>, <Act>Computer Vision</Act> powered by <Act>AWS Deployment</Act> and <Act>GPU Optimization</Act>.
                     <br /> I'd love to apply my skills to real-world problems and am always on the lookout for new opportunities!
                     <br />
-                    <br /> I'm currently working with <Act>BalanX Bio</Act>, a startup focused on leveraging AI for wellness and healthcare solutions, under the 'Emotion Response' team.
-                    <br /> I'm tasked with utilizing cutting-edge AI techniques to accurately gauge the emotional state of the user based on multimodal inputs.
-                    <br />  As a side project, I'm working on a competitive entry for the <Act><a href="https://smp-challenge.com/" target="_blank" rel="noopener noreferrer" style={{ color: theme.accent, textDecoration: 'underline' }}>SMP Challenge</a></Act> which is an extension of a project I worked on during my last semester. 
+                    <br /> I'm currently working with <Act>BalanX Bio</Act>, where we're building an emotionally sentient LLM-powered virtual assistant!
+                    <br /> I'm responsible for developing the core of the <Act>multimodal AI architecture</Act> involved in emotion recognition of the user.
+                    <br />  As a side project, I'm working on a competitive entry for the <Act><a href="https://smp-challenge.com/" target="_blank" rel="noopener noreferrer" style={{ color: theme.accent, textDecoration: 'underline', transition: 'color 0.4s ease' }}>SMP Challenge</a></Act> which is an extension of a project I worked on during my last semester. 
                     <br />
                     <br /> While I'm not busy racking my brain with projects and assigments, you'll probably find me:
-                    <br /> • Unwinding at the <Act>Gym</Act>, working on my fitness and trying to demolish my PRs!
-                    <br /> • Watching my favorite football team, <Act>Arsenal</Act> fumble yet another Premier League title.
-                    <br /> <span className={styles.hiddenbullet}>•</span> (It's been <Act>{time.years} years, {time.days} days, {time.hours} hours, {time.minutes} minutes, and {time.seconds} seconds</Act> since the day they last won the title!)
+                    <br /> • Unwinding at the <Act>Gym</Act>, a great way to take out the frustrations of the day!
+                    <br /> • Watching my favorite football team <Act>Arsenal</Act>, who finally won the title after a 22 year long wait!
+                    <br /> <span className={styles.hiddenbullet}>•</span> (It's been <Act>{time.years} years, {time.days} days, {time.hours} hours, {time.minutes} minutes, and {time.seconds} seconds</Act> since probably the happiest day of my life!)
                     <br /> • Getting my brain twisted (and sometimes my fingers too) with puzzles like the <Puzzle name="Mastermorphix" />, <Puzzle name="Megaminx" />, and <Puzzle name="Square-1" />
                     <br /> 
                 </p>
