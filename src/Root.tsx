@@ -2,6 +2,7 @@ import "./styles/fonts.css";
 import "./styles/global.css";
 import "./styles/reset.css";
 import "./styles/utils.css";
+import { Analytics } from "@vercel/analytics/react";
 import { css, cx } from "@linaria/core";
 import { motion } from "framer-motion";
 import React, {
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 				</Routes>
 			</Suspense>
 		</BrowserRouter>
+		<Analytics />
 	</React.StrictMode>,
 );
 
